@@ -1,0 +1,22 @@
+#include <stdio.h>
+int n, suma, p, m[100], i;
+void main(void)
+{
+	printf("Introduceti numarul tipurilor de monede:"); 
+	scanf("%d", &n);
+	printf("\n");
+	for(i=0;i<n;i++)
+	{
+		printf("m[%d]=",i); 
+		scanf("%d",&m[i]);
+	}
+	printf("Introduceti suma de bani:"); 
+	scanf("%d", &suma);
+	for(i=0; i<n; i++)
+	{
+		p=suma/m[i]; //p imi retine de cate ori se cuprinde moneda i in suma de bani;
+		suma=suma%m[i];
+		printf("Suma are %d monede de %d lei\n", p, m[i]);
+	}	
+}
+
